@@ -3,8 +3,6 @@
 /**
  * Module dependencies.
  */
-const cluster = require('cluster');
-const numCPUs = require('os').cpus().length;
 var app = require('../app');
 var debug = require('debug')('test:server');
 var http = require('http');
@@ -25,26 +23,10 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-if (cluster.isMaster) {
 
-    console.log('PROCESS', `Master ${process.pid} is running.`);
-
-    for (let i = 0; i < numCPUs; i++) {
-        cluster.fork();
-    }
-
-    cluster.on('exit', (worker, code, signal) => {
-        console.log('PROCESS', `worker ${worker.process.pid} is died.`);
-    });
-
-} else {
-
-    server.listen(port);
-    server.on('error', onError);
-    server.on('listening', onListening);
-
-    console.log('PROCESS', `Worker ${process.pid} is started.`);
-}
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
 
 
 /**
