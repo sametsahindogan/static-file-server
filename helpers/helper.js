@@ -8,14 +8,14 @@ let hash = (value) => {
 
 let successResponse = (data) => {
     return {
-        'succes': true,
+        'success': true,
         'data': data
     };
 };
 
 let errorResponse = (title, message, code) => {
     return {
-        'succes': false,
+        'success': false,
         'data': {
             'title': title,
             'message': message,
