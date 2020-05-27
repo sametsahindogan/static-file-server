@@ -75,7 +75,7 @@ The received **token** can be transmitted to other endpoints under the name **"t
 **Example Response;**
 ```json
 {
-    "succes": true,
+    "success": true,
     "data": {
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiNTlmMTA4NTBmZmY3OWEzMzQzYTQzNWMwMjBhOGRiM2UiLCJhcGlfc2VjcmV0IjoiZWM4ZDE1OTA1ZWYzZTEzMTBiMThhYjIyM2FmMWM4ZjUzY2ZhOGUzMGE2NzU3YzVlYTVhMDI0MzJkZDQ4ZTkxNCIsImV4cCI6MTU5MDU4Mzk0MiwiaWF0IjoxNTkwNTgwOTQyfQ.wnpowIaqULFXGwFKvqcTCfOs-nuea99ZNLnfGV-uq0k"
     }
@@ -101,7 +101,7 @@ E.g: http://localhost:3000/files?private=0&token=jwtToken
 **Example Response;**
 ```json
 {
-    "succes": true,
+    "success": true,
     "data": [
         {
             "file": "test.png",
