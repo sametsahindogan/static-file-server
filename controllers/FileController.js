@@ -42,7 +42,11 @@ class FileController {
             return response.send(helper.errorResponse('Error', file.error, 1));
         }
 
-        response.set('Content-Type', file.mimetype);
+        response.set({
+            'pragma': 'private',
+            'Cache-Control': 'private, max-age=31557600',
+            'Content-Type': file.mimetype
+        });
 
         if (download) {
             response.set('Content-Disposition', 'attachment; filename="' + file.filename + '.' + file.extension + '"');
@@ -65,7 +69,11 @@ class FileController {
             return response.send(helper.errorResponse('Error', file.error, 1));
         }
 
-        response.set('Content-Type', file.mimetype);
+        response.set({
+            'pragma': 'private',
+            'Cache-Control': 'private, max-age=31557600',
+            'Content-Type': file.mimetype
+        });
 
         if (download) {
             response.set('Content-Disposition', 'attachment; filename="' + file.filename + '.' + file.extension + '"');
