@@ -1,3 +1,4 @@
+require('dotenv').config();
 require('../bootstrap/db')();
 const UserModel = require('../models/user');
 const helper = require('../helpers/helper')
